@@ -9,11 +9,11 @@ function draw() {
 
   beginShape();
 
-  for (let x = 0; < 200; x++) {
-        const y = originalY + Math.random() * 100;
-        vertex(x,y);
+  for (let x = 0; x < 200; x++) {
+    const y = originalY + Math.random() * 100;
+    vertex(x, y);
   }
-  
+
   endShape();
 
   noLoop();
