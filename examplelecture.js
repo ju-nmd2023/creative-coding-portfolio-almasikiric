@@ -9,7 +9,7 @@ function draw() {
 
   beginShape();
 
-  for (let x = 0; < innerWidth; x++) {
+  for (let x = 0; < 200; x++) {
         const y = originalY + Math.random() * 100;
         vertex(x,y);
   }
