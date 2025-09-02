@@ -1,10 +1,5 @@
 [
   {
-    "file": "experiments/fingerprintone.js",
-    "name": "Recreation of the Joy Division Album — VOL 2",
-    "description": "In VOL 2 I made another variation of the album. I added different colours, the strokes simulate ocean waves with a sandy beach background. To make it more realistic the waves are moving by using a framecount. "
-  },
-  {
     "file": "experiments/albumone.js",
     "name": "Recreation of the Joy Division Album — VOL 1",
     "description": "After seeing all the abstract art I immediately thought of the album cover Unknown Pleasures by Peter Saville. It inspired this piece where I took the use of for loop to generate wavy lines with Perlin noice which change everytime you reload the webpage. The loops generate smooth, repeating curves on a black background with white strokes. "
