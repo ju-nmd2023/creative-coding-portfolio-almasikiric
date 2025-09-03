@@ -1,13 +1,13 @@
 [
   {
-    "file": "experiments/cdalbum.js",
-    "name": "Recreation of the Radial Perlin Noise with Tree Rings into a CD — VOL 1",
-    "description": "I felt inspired working with this piece after seeing it on gorillasun. I played around with framecount and noise to get an animation that looks like a CD disc. Added white and black colored strokes to get the resemblance too. "
+    "file": "experiments/rainbow.js",
+    "name": "Recreation of the Radial Perlin Noise with Tree Rings into a CD — VOL 2",
+    "description": "Continuing from the CD disc I used Math.random() to give the rings random HSB colors. I changed the resolution to make the shapes more abstract and tunnel-like.. "
   },
   {
-    "file": "experiments/rainbow.js",
-    "name": "Recreation of the Joy Division Album — VOL 1",
-    "description": "After seeing all the abstract art I immediately thought of the album cover Unknown Pleasures made by Peter Saville. It inspired this piece where I took the use of for-loop to generate wavy lines with Perlin noise which updates everytime you reload the website. The loops generate smooth, repeating curves on a black background with white strokes. "
+    "file": "experiments/cdalbum.js",
+    "name": "Recreation of the Radial Perlin Noise with Tree Rings into a CD — VOL 1",
+    "description": "I felt inspired working with this piece after seeing it on Gorillasun. I used frameCount and Perlin noise to get an animation that looks like a CD disc.I added black and white strokes to emphasize the CD’s reflective rings. "
   },
   {
     "file": "experiments/albumone.js",

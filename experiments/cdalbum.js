@@ -2,7 +2,7 @@
 
 function setup() {
   createCanvas(innerWidth, innerHeight);
- background(249, 202, 24); 
+ background(249, 202, 24); //yellow here
   stroke(20);
   strokeWeight(1);
   noFill();
