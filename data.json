@@ -1,13 +1,13 @@
 [
   {
-    "file": "experiments/rainbow.js",
-    "name": "Recreation of the Radial Perlin Noise with Tree Rings into a CD — VOL 2",
-    "description": "Continuing from the CD disc I used Math.random() to give the rings random HSB colors. I changed the resolution to make the shapes more abstract and tunnel-like.. "
-  },
-  {
     "file": "experiments/cdalbum.js",
     "name": "Recreation of the Radial Perlin Noise with Tree Rings into a CD — VOL 1",
     "description": "I felt inspired working with this piece after seeing it on Gorillasun. I used frameCount and Perlin noise to get an animation that looks like a CD disc.I added black and white strokes to emphasize the CD’s reflective rings. "
+  },
+  {
+    "file": "experiments/rainbow.js",
+    "name": "Recreation of the Radial Perlin Noise with Tree Rings into a CD — VOL 2",
+    "description": "Continuing from the CD disc I used Math.random() to give the rings random HSB colors. I changed the resolution to make the shapes more abstract and tunnel-like.. "
   },
   {
     "file": "experiments/albumone.js",
