@@ -1,5 +1,15 @@
 [
   {
+    "file": "experiments/cdalbum.js",
+    "name": "Recreation of the Radial Perlin Noise with Tree Rings",
+    "description": "I felt inspired working with this piece after seeing it on gorillasun. It is supposed to resemble tree rings but after looking into it further it reminded me of a fingerprint. I coded.. "
+  },
+  {
+    "file": "experiments/cdskiva.js",
+    "name": "Recreation of the Joy Division Album — VOL 1",
+    "description": "After seeing all the abstract art I immediately thought of the album cover Unknown Pleasures made by Peter Saville. It inspired this piece where I took the use of for-loop to generate wavy lines with Perlin noise which updates everytime you reload the website. The loops generate smooth, repeating curves on a black background with white strokes. "
+  },
+  {
     "file": "experiments/albumone.js",
     "name": "Recreation of the Joy Division Album — VOL 1",
     "description": "After seeing all the abstract art I immediately thought of the album cover Unknown Pleasures made by Peter Saville. It inspired this piece where I took the use of for-loop to generate wavy lines with Perlin noise which updates everytime you reload the website. The loops generate smooth, repeating curves on a black background with white strokes. "

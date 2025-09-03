@@ -1,9 +1,12 @@
+// citation, base of code is derived from this link: https://www.gorillasun.de/blog/radial-perlin-noise-and-generative-tree-rings/
+
 function setup() {
-  createCanvas(400, 400);
-  background(255);
+  createCanvas(innerWidth, innerHeight);
+  background(200, 200, 200);
   stroke(20);
   strokeWeight(1);
   noFill();
+  frameRate(30);
 }
 
 let scale = 50;
@@ -15,6 +18,7 @@ let numRings = 40;
 function draw() {
   for (r = 0; r < radius; r += radius / numRings) {
     beginShape();
+
     for (
       a = -TAU / numPoints;
       a < TAU + TAU / numPoints;
@@ -34,5 +38,11 @@ function draw() {
     }
     endShape();
   }
-  noLoop();
+//i put the noloop outside of the function to stop draw() from looping so the shape is drawn once and remains static, the strokes appear moresol
+
+
+  // framecount here makes it stop looping after 100 frames
+  if (frameCount > 100) {
+    noLoop(); //freezes my animation
+  }
 }
