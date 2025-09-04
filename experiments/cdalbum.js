@@ -24,12 +24,15 @@ function draw() {
   let offsetY = map(noise(frameCount * 0.01 + 100), 0, 1, -5, 5);
 
   for (let r = 0; r < radius; r += radius / numRings) {
-    // added cd colours between these strokes
-    if (r < radius * 0.1 || r > radius * 0.3) {
-      stroke(0); // black
-    } else {
-      stroke(255); // white
-    }
+    // added cd colours between these strokes so that they are different
+   if (r < radius * 0.1) {
+    // make transparent to be able to skip drawing the first black lines
+    noStroke();
+  } else if (r > radius * 0.3) {
+    stroke(0); // black
+  } else {
+    stroke(255); // white
+  }
 
     beginShape();
     for (
