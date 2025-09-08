@@ -1,4 +1,3 @@
-
 /* CITATION
 Coding Tutorial by Patt Vira 
 Name: Pastel Gradient Screensaver
@@ -8,47 +7,44 @@ p5js link: https://editor.p5js.org/pattvira/sketches/QOtQJc5H7
 
 */
 
-
-
-let balls = []; let num = 10;
+let balls = [];
+let num = 10;
 
 function setup() {
   createCanvas(innerWidth, innerHeight);
-  
-  for (let i=0; i<num; i++) {
+
+  for (let i = 0; i < num; i++) {
     let x = random(width);
     let y = random(height);
     let r = random(200, 400);
     balls[i] = new Circle(x, y, r);
   }
-  
 }
 
 function draw() {
   background(255);
-  
-  for (let i=0; i<num; i++) {
+
+  for (let i = 0; i < num; i++) {
     balls[i].update();
     balls[i].display();
   }
-  
 }
 
 //circle draws and becomes visible
 
-  class Circle {
+class Circle {
   constructor(x, y, radius) {
     this.pos = createVector(x, y);
     this.vel = p5.Vector.random2D().mult(random(2, 5));
     this.radius = radius;
-    
+
     this.ctx = drawingContext;
     this.c = this.getPastelColor();
   }
-  
+
   update() {
     this.pos.add(this.vel);
-    
+
     if (this.pos.x > width) {
       this.vel.x *= -1;
       this.pos.x = width;
@@ -63,12 +59,18 @@ function draw() {
       this.vel.y *= -1;
       this.pos.y = 0;
     }
-    
   }
-  
+
   display() {
-    let gradient = this.ctx.createRadialGradient(this.pos.x, this.pos.y, 0, this.pos.x, this.pos.y, this.radius);
-  
+    let gradient = this.ctx.createRadialGradient(
+      this.pos.x,
+      this.pos.y,
+      0,
+      this.pos.x,
+      this.pos.y,
+      this.radius
+    );
+
     let r = red(this.c);
     let g = green(this.c);
     let b = blue(this.c);
@@ -82,14 +84,13 @@ function draw() {
     this.ctx.fillStyle = gradient;
 
     noStroke();
-    ellipse(this.pos.x, this.pos.y, this.radius*2, this.radius*2);
+    ellipse(this.pos.x, this.pos.y, this.radius * 2, this.radius * 2);
   }
-  
+
   getPastelColor() {
     let r = random(150, 255);
     let g = random(150, 255);
     let b = random(150, 255);
     return color(r, g, b);
   }
-  
 }
