@@ -5,7 +5,7 @@ function setup() {
   noFill();
   rectMode(CENTER);
 }
-//version
+
 // citation, base of code is derived from this link: https://www.gorillasun.de/blog/smooth-curves-with-perlin-noise-and-recreating-the-unknown-pleasures-album-cover-in-p5/
 //I tweaked numbers so that it fits more with the style, smoother curves and not so squiggly as the example.
 
