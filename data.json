@@ -2,7 +2,7 @@
   {
     "file": "experiments/heatmap.js",
     "name": "Heatmap — VOL 2, Week 2",
-    "description": "Art inspired by the Gradient Background created by Patt Vira. Experimented with autonomous agents like position and velocity. Here, the circles are following as you hover the mouse. "
+    "description": "Art inspired by the Gradient Background created by Patt Vira. Experimented with the hovering effect, the text follows when hovering the mouse decently fast in a randomized pattern. There is also a fadeout of the text so it looks more smooth. "
   },
   {
     "file": "experiments/pastel.js",

@@ -11,9 +11,15 @@ let hoverTimer = 0;
 let hoverTexts = [];
 
 let fixedSpeed = 0.5;
+let myFont;
+
+function preload() {
+  myFont = loadFont("assets/tropical.otf");
+}
 
 function setup() {
   createCanvas(innerWidth, innerHeight);
+  textFont(myFont); // set the font here for the entire sketch
 
   for (let i = 0; i < num; i++) {
     let x = random(width);
@@ -36,28 +42,27 @@ function draw() {
     if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
       let angle = random(TWO_PI);
       let speed = 0.2;
-
-      let hoverText = new TextFollower(mouseX, mouseY, "hello");
+      // chat helped me with adding the text and to make it follow the hover
+      let hoverText = new TextFollower(mouseX, mouseY, "HEATMAP");
       hoverText.vel = p5.Vector.fromAngle(angle).mult(speed);
 
-      hoverTexts.push(hoverText); 
+      hoverTexts.push(hoverText);
     }
   }
 
-  // Update & display hover texts
   for (let i = hoverTexts.length - 1; i >= 0; i--) {
     hoverTexts[i].update();
     hoverTexts[i].display();
 
     hoverTexts[i].lifespan--;
     if (hoverTexts[i].lifespan <= 0) {
-      hoverTexts.splice(i, 1); 
+      hoverTexts.splice(i, 1);
     }
   }
 
   // Limit the number of hover texts to 30
   if (hoverTexts.length > 30) {
-    hoverTexts.splice(0, hoverTexts.length - 30); 
+    hoverTexts.splice(0, hoverTexts.length - 30);
   }
 }
 
@@ -132,7 +137,7 @@ class TextFollower {
     this.pos = createVector(x, y);
     this.vel = createVector(0, 0);
     this.txt = txt;
-    this.lifespan = 120; // 2 seconds at 60fps
+    this.lifespan = 120;
   }
 
   update() {
@@ -143,9 +148,10 @@ class TextFollower {
   }
 
   display() {
-    fill(0, map(this.lifespan, 0, 120, 0, 255)); // fade out
+    textFont(myFont);
+    fill(255, map(this.lifespan, 0, 120, 0, 255)); // fade out
     noStroke();
-    textSize(24);
+    textSize(30);
     textAlign(CENTER, CENTER);
     text(this.txt, this.pos.x, this.pos.y);
   }
