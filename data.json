@@ -1,7 +1,7 @@
 [
   {
     "file": "experiments/heatmap.js",
-    "name": "Recreation of the Radial Perlin Noise with Tree Rings into a CD — VOL 1",
+    "name": "Heatmap abstract art inspired of the Gradient Background created by Patt Vira  — VOL 1 (week 2)",
     "description": "I felt inspired working with this piece after seeing it on Gorillasun. I used frameCount and Perlin noise to get an animation that looks like a CD disc. I added black and white strokes to emphasize the CD’s reflective rings. "
   },
   {

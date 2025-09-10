@@ -30,7 +30,7 @@ function draw() {
   }
 }
 
-//circle draws and becomes visible
+//circle draws and becomes visible. Adding flow fields like add and mult to control direction and magnitude.
 
 class Circle {
   constructor(x, y, radius) {
@@ -41,7 +41,7 @@ class Circle {
     this.ctx = drawingContext;
     this.c = this.getPastelColor();
   }
-
+  //using p5 to create motion
   update() {
     this.pos.add(this.vel);
 
