@@ -19,7 +19,7 @@ function preload() {
 
 function setup() {
   createCanvas(innerWidth, innerHeight);
-  textFont(myFont); // set the font here for the entire sketch
+  textFont(myFont); // set the font here for the entire sketch!
 
   for (let i = 0; i < num; i++) {
     let x = random(width);
@@ -37,11 +37,14 @@ function draw() {
     balls[i].display();
   }
 
+  //adding my hover effect
   hoverTimer++;
   if (hoverTimer % 15 === 0) {
     if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
       let angle = random(TWO_PI);
       let speed = 0.2;
+
+      
       // chat helped me with adding the text and to make it follow the hover
       let hoverText = new TextFollower(mouseX, mouseY, "HEATMAP");
       hoverText.vel = p5.Vector.fromAngle(angle).mult(speed);
