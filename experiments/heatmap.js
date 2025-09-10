@@ -45,6 +45,8 @@ class Circle {
   update() {
     this.pos.add(this.vel);
 
+
+    // Collision with canvas edges with reflection, follows algorithmic motion
     if (this.pos.x > width) {
       this.vel.x *= -1;
       this.pos.x = width;
@@ -61,7 +63,10 @@ class Circle {
     }
   }
 
+  //Visual Complexity / Generative Aesthetic. Radial gradients to create smooth effects:
   display() {
+
+
     let gradient = this.ctx.createRadialGradient(
       this.pos.x,
       this.pos.y,
