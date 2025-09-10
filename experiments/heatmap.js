@@ -16,7 +16,7 @@ function setup() {
   for (let i = 0; i < num; i++) {
     let x = random(width);
     let y = random(height);
-    let r = random(200, 400);
+    let r = random(400, 800);
     balls[i] = new Circle(x, y, r);
   }
 }
@@ -32,6 +32,7 @@ function draw() {
 
 //circle draws and becomes visible. Adding flow fields like add and mult to control direction and magnitude.
 
+
 class Circle {
   constructor(x, y, radius) {
     this.pos = createVector(x, y);
@@ -42,11 +43,11 @@ class Circle {
     this.c = this.getPastelColor();
   }
   //using p5 to create motion
+
   update() {
     this.pos.add(this.vel);
-
-
     // Collision with canvas edges with reflection, follows algorithmic motion
+
     if (this.pos.x > width) {
       this.vel.x *= -1;
       this.pos.x = width;
@@ -62,11 +63,9 @@ class Circle {
       this.pos.y = 0;
     }
   }
+  //Visual Complexity: radial gradients to create smooth effects
 
-  //Visual Complexity / Generative Aesthetic. Radial gradients to create smooth effects:
   display() {
-
-
     let gradient = this.ctx.createRadialGradient(
       this.pos.x,
       this.pos.y,
