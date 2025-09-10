@@ -1,8 +1,8 @@
 [
   {
     "file": "experiments/heatmap.js",
-    "name": "Heatmap abstract art inspired of the Gradient Background created by Patt Vira  — VOL 1 (week 2)",
-    "description": "I felt inspired working with this piece after seeing it on Gorillasun. I used frameCount and Perlin noise to get an animation that looks like a CD disc. I added black and white strokes to emphasize the CD’s reflective rings. "
+    "name": "Gradient art — VOL 1, Week 2",
+    "description": "Art inspired by the Gradient Background created by Patt Vira. Experimented with autonomous agents like position and velocity. The circles move independently and interact with the canvas boundaries and after each click, new circles will spawn and move outward. "
   },
   {
     "file": "experiments/cdalbum.js",
