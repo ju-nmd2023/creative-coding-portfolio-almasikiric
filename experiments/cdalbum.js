@@ -60,3 +60,8 @@ function draw() {
     noLoop(); // stops animation after 100 frames, freezes
   }
 }
+function windowResized() {
+  resizeCanvas(innerWidth, innerHeight);
+  clear();
+  setup();
+}

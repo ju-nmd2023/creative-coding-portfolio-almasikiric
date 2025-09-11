@@ -65,3 +65,8 @@ function draw() {
   }
   pop();
 }
+function windowResized() {
+  resizeCanvas(innerWidth, innerHeight);
+  clear();
+  setup();
+}

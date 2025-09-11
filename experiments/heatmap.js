@@ -16,11 +16,10 @@ let myFont;
 function preload() {
   myFont = loadFont("assets/tropical.otf");
 }
-
 function setup() {
   createCanvas(innerWidth, innerHeight);
   textFont(myFont); // set the font here for the entire sketch!
-
+  
   for (let i = 0; i < num; i++) {
     let x = random(width);
     let y = random(height);
@@ -31,38 +30,38 @@ function setup() {
 
 function draw() {
   background(0);
-
+  
   for (let i = 0; i < balls.length; i++) {
     balls[i].update();
     balls[i].display();
   }
-
+  
   //adding my hover effect
   hoverTimer++;
   if (hoverTimer % 15 === 0) {
     if (mouseX >= 0 && mouseX <= width && mouseY >= 0 && mouseY <= height) {
       let angle = random(TWO_PI);
       let speed = 0.2;
-
+      
       
       // chat helped me with adding the text and to make it follow the hover
       let hoverText = new TextFollower(mouseX, mouseY, "HEATMAP");
       hoverText.vel = p5.Vector.fromAngle(angle).mult(speed);
-
+      
       hoverTexts.push(hoverText);
     }
   }
-
+  
   for (let i = hoverTexts.length - 1; i >= 0; i--) {
     hoverTexts[i].update();
     hoverTexts[i].display();
-
+    
     hoverTexts[i].lifespan--;
     if (hoverTexts[i].lifespan <= 0) {
       hoverTexts.splice(i, 1);
     }
   }
-
+  
   // Limit the number of hover texts to 30
   if (hoverTexts.length > 30) {
     hoverTexts.splice(0, hoverTexts.length - 30);
@@ -75,14 +74,14 @@ class Circle {
     this.pos = createVector(x, y);
     this.vel = p5.Vector.random2D().mult();
     this.radius = radius;
-
+    
     this.ctx = drawingContext;
     this.c = c || this.getHeatmapColor();
   }
-
+  
   update() {
     this.pos.add(this.vel);
-
+    
     if (this.pos.x > width) {
       this.vel.x *= -1;
       this.pos.x = width;
@@ -90,7 +89,7 @@ class Circle {
       this.vel.x *= -1;
       this.pos.x = 0;
     }
-
+    
     if (this.pos.y > height) {
       this.vel.y *= -1;
       this.pos.y = height;
@@ -99,7 +98,7 @@ class Circle {
       this.pos.y = 0;
     }
   }
-
+  
   display() {
     let gradient = this.ctx.createRadialGradient(
       this.pos.x,
@@ -109,20 +108,20 @@ class Circle {
       this.pos.y,
       this.radius
     );
-
+    
     let r = red(this.c);
     let g = green(this.c);
     let b = blue(this.c);
-
+    
     gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, 1)`);
     gradient.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
-
+    
     this.ctx.fillStyle = gradient;
-
+    
     noStroke();
     ellipse(this.pos.x, this.pos.y, this.radius * 2, this.radius * 2);
   }
-
+  
   getHeatmapColor() {
     let colors = [
       color(0, 255, 0),
@@ -142,14 +141,14 @@ class TextFollower {
     this.txt = txt;
     this.lifespan = 120;
   }
-
+  
   update() {
     this.pos.add(this.vel);
-
+    
     if (this.pos.x > width || this.pos.x < 0) this.vel.x *= -1;
     if (this.pos.y > height || this.pos.y < 0) this.vel.y *= -1;
   }
-
+  
   display() {
     textFont(myFont);
     fill(255, map(this.lifespan, 0, 120, 0, 255)); // fade out
@@ -158,4 +157,10 @@ class TextFollower {
     textAlign(CENTER, CENTER);
     text(this.txt, this.pos.x, this.pos.y);
   }
+}
+
+function windowResized() {
+  resizeCanvas(innerWidth, innerHeight);
+  clear();
+  setup();
 }

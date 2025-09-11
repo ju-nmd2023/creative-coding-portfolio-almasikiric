@@ -110,3 +110,8 @@ class Circle {
     return color(r, g, b);
   }
 }
+function windowResized() {
+  resizeCanvas(innerWidth, innerHeight);
+  clear();
+  setup();
+}

@@ -1,6 +1,5 @@
 // citation, base of code is derived from this link: https://www.gorillasun.de/blog/radial-perlin-noise-and-generative-tree-rings/
 
-
 function setup() {
   createCanvas(innerWidth, innerHeight);
   background(0);
@@ -19,17 +18,17 @@ let radius = 150;
 let numRings = 50;
 
 function draw() {
-  translate(width / 2, height / 2);  // center my shape
+  translate(width / 2, height / 2); // center my shape
 
-    //tweaked numbers here to get it to look like a cd more
+  //tweaked numbers here to get it to look like a cd more
   let offsetX = map(noise(frameCount * 0.01), 0, 3, -5, 5);
   let offsetY = map(noise(frameCount * 0.01 + 100), 0, 1, -5, 5);
 
   for (let r = 0; r < radius; r += radius / numRings) {
     // added cd colours between these strokes
     if (r < radius * 0.01 || r > radius * 0.01) {
-      let randomHue = Math.random() * 360; 
-      stroke(randomHue, 100, 100); 
+      let randomHue = Math.random() * 360;
+      stroke(randomHue, 100, 100);
     } else {
       stroke(0);
     }
@@ -47,9 +46,14 @@ function draw() {
     }
     endShape();
   }
- //  the following lines of code is derived from: https://p5js.org/reference/p5/frameCount/
+  //  the following lines of code is derived from: https://p5js.org/reference/p5/frameCount/
 
   if (frameCount > 30) {
     noLoop(); // stops animation
   }
+}
+function windowResized() {
+  resizeCanvas(innerWidth, innerHeight);
+  clear();
+  setup();
 }
