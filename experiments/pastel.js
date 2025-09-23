@@ -82,7 +82,7 @@ function mouseClicked() {
       let note = random(pastelNotes);
 
       //i wanted the sound to be more soft hence 0.1. time is undefined since we do not care about it, clicking is what affects it
-      synth.triggerAttackRelease(note, "8n",undefined, 0.1);
+      synth.triggerAttackRelease(note, "8n", undefined, 0.1);
     }
   }
 }
