@@ -1,12 +1,12 @@
 [
   {
     "file": "experiments/pastel.js",
-    "name": "Gradient art — VOL 1, Week 2",
-    "description": "Art inspired by the Gradient Background created by Patt Vira. Experimented with autonomous agents like position and velocity. The circles move independently and interact with the canvas boundaries and after each click, new circles will spawn and move outward. "
+    "name": "Gradient art — VOL 1, Week 2/3",
+    "description": "Art inspired by the Gradient Background created by Patt Vira. Experimented with autonomous agents like position and velocity. The circles move independently and interact with the canvas boundaries and after each click, new circles will spawn and move outward in a wave effect. "
   },
   {
     "file": "experiments/heatmap.js",
-    "name": "Heatmap — VOL 2, Week 2",
+    "name": "Heatmap — VOL 2, Week 2/3",
     "description": "Art inspired by the Gradient Background created by Patt Vira. Experimented with the hovering effect, the text follows when hovering the mouse decently fast in a randomized pattern. There is also a fadeout of the text so it looks more smooth. "
   },
   {

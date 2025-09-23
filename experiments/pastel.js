@@ -8,6 +8,7 @@ p5js link: https://editor.p5js.org/pattvira/sketches/QOtQJc5H7
 */
 
 let balls = [];
+let waves = [];
 let num = 50;
 
 function setup() {
@@ -28,7 +29,12 @@ function draw() {
     balls[i].update();
     balls[i].display();
   }
-  
+    for (let i = waves.length - 1; i >= 0; i--) {
+    waves[i].update();
+    waves[i].display();
+    if (waves[i].alpha <= 0) {
+      waves.splice(i, 1);
+    }}
 }
 // Spawns a burst of circles at the click position, same randomized colors as the background
 function mouseClicked() {
@@ -41,6 +47,12 @@ function mouseClicked() {
     let clickCircle = new Circle(mouseX, mouseY, r, );
     clickCircle.vel = p5.Vector.fromAngle(angle).mult(speed);
     balls.push(clickCircle);
+   for (let j = 0; j < 3; j++) { 
+      let wave = new Wave(clickCircle);
+      wave.radius += j * 20; 
+      wave.alpha -= j * 30; 
+      waves.push(wave);
+ }
   }
 }
 
@@ -110,6 +122,43 @@ class Circle {
     return color(r, g, b);
   }
 }
+//added a wave effect everytime you click so that it flows more natural
+class Wave {
+  constructor(circle) {
+    this.circle = circle;
+    this.radius = circle.radius;
+    this.alpha = 150;
+    this.c = circle.c;
+  }
+
+  update() {
+    this.radius += 6; // Faster expansion for more drastic effect
+    this.alpha -= 3;   // Fade slightly faster
+  }
+
+  display() {
+    let gradient = drawingContext.createRadialGradient(
+      this.circle.pos.x,
+      this.circle.pos.y,
+      0,
+      this.circle.pos.x,
+      this.circle.pos.y,
+      this.radius
+    );
+
+    let r = red(this.c);
+    let g = green(this.c);
+    let b = blue(this.c);
+
+    gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${this.alpha / 255})`);
+    gradient.addColorStop(1, `rgba(${r}, ${g}, ${b}, 0)`);
+
+    drawingContext.fillStyle = gradient;
+    noStroke();
+    ellipse(this.circle.pos.x, this.circle.pos.y, this.radius * 2);
+  }
+}
+
 function windowResized() {
   resizeCanvas(innerWidth, innerHeight);
   clear();
