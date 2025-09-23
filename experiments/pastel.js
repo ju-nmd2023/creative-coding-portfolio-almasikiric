@@ -11,6 +11,19 @@ let balls = [];
 let waves = [];
 let num = 50;
 
+// Tone.js synth, a tone happens everytime the user clicks
+const synth = new Tone.Synth({
+  oscillator: { type: "sine" },
+  envelope: { attack: 0.05, decay: 0.1, sustain: 0.3, release: 1 },
+}).toDestination();
+
+//it was really loud so I wanted to adjust the volume
+const volume = new Tone.Volume(-20).toDestination(); // reduced by 20 dB
+synth.connect(volume);
+
+// Array of different notes, multiple to make it more fun
+const pastelNotes = ["C4", "D4", "E4", "G4", "A4"];
+
 function setup() {
   createCanvas(innerWidth, innerHeight);
 
@@ -29,30 +42,48 @@ function draw() {
     balls[i].update();
     balls[i].display();
   }
-    for (let i = waves.length - 1; i >= 0; i--) {
+  for (let i = waves.length - 1; i >= 0; i--) {
     waves[i].update();
     waves[i].display();
     if (waves[i].alpha <= 0) {
       waves.splice(i, 1);
-    }}
+    }
+  }
 }
 // Spawns a burst of circles at the click position, same randomized colors as the background
 function mouseClicked() {
+  Tone.start(); //open up the audio on user interaction
   for (let i = 0; i < 5; i++) {
-    let r = random(100, 150,); 
+    let r = random(100, 150);
     let angle = random(TWO_PI);
     let speed = random(0.2, 2);
-    
-    // Create a new circle with velocity pointing in a random direction
-    let clickCircle = new Circle(mouseX, mouseY, r, );
+
+    let clickCircle = new Circle(mouseX, mouseY, r);
     clickCircle.vel = p5.Vector.fromAngle(angle).mult(speed);
     balls.push(clickCircle);
-   for (let j = 0; j < 3; j++) { 
-      let wave = new Wave(clickCircle);
-      wave.radius += j * 20; 
-      wave.alpha -= j * 30; 
-      waves.push(wave);
- }
+
+    for (let i = 0; i < 5; i++) {
+      let r = random(100, 150);
+      let angle = random(TWO_PI);
+      let speed = random(0.2, 2);
+
+      // Create a new circle with velocity pointing in a random direction
+      let clickCircle = new Circle(mouseX, mouseY, r);
+      clickCircle.vel = p5.Vector.fromAngle(angle).mult(speed);
+      balls.push(clickCircle);
+      for (let j = 0; j < 3; j++) {
+        let wave = new Wave(clickCircle);
+        wave.radius += j * 20;
+        wave.alpha -= j * 30;
+        waves.push(wave);
+      }
+
+      //this plays a random pastel note with each circle (after you click!)
+      let note = random(pastelNotes);
+
+      //i wanted the sound to be more soft hence 0.1. time is undefined since we do not care about it, clicking is what affects it
+      synth.triggerAttackRelease(note, "8n",undefined, 0.1);
+    }
   }
 }
 
@@ -133,7 +164,7 @@ class Wave {
 
   update() {
     this.radius += 6; // Faster expansion for more drastic effect
-    this.alpha -= 3;   // Fade slightly faster
+    this.alpha -= 3; // Fade slightly faster
   }
 
   display() {
