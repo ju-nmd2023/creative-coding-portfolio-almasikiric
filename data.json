@@ -1,8 +1,14 @@
 [
   {
+    "file": "experiments/pastelweek2.js",
+    "name": "Gradient art — VOL 1, Week 2-3",
+    "description": "Art inspired by the Gradient Background created by Patt Vira. Experimented with autonomous agents like position and velocity. The circles move independently and interact with the canvas boundaries and after each click, new circles will spawn and move outward softly. "
+  },
+
+  {
     "file": "experiments/pastel.js",
-    "name": "Gradient art — VOL 1, Week 2-3 and 4",
-    "description": "Art inspired by the Gradient Background created by Patt Vira. Experimented with autonomous agents like position and velocity. The circles move independently and interact with the canvas boundaries and after each click, new circles will spawn and move outward in a wave effect. Week 4: Added soft synth sounds everytime the user clicks, feel free to create a song! "
+    "name": "GRADIENT WAVE — Week 4",
+    "description": "To improve the circle-clicks from last week, I have incorporated a wave-effect to the circles. Everytime the user clicks the wave-effect appears. The circles flow better with the sounds. I added tone to my clicked function, a soft synth sound will appear everytime the user clicks. I lowered the volume dB to make it more soft, each sound is random just like the circle colour. Feel free to create a song! "
   },
   {
     "file": "experiments/heatmap.js",
