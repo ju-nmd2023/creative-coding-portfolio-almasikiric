@@ -37,7 +37,7 @@ function mouseClicked() {
     let angle = random(TWO_PI);
     let speed = random(0.2, 2);
     
-    // Create a new circle with velocity pointing in a random direction
+    // Creating a new circle with velocity pointing in a random direction
     let clickCircle = new Circle(mouseX, mouseY, r, );
     clickCircle.vel = p5.Vector.fromAngle(angle).mult(speed);
     balls.push(clickCircle);

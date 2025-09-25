@@ -163,8 +163,8 @@ class Wave {
   }
 
   update() {
-    this.radius += 6; // Faster expansion for more drastic effect
-    this.alpha -= 3; // Fade slightly faster
+    this.radius += 6; 
+    this.alpha -= 3; 
   }
 
   display() {
