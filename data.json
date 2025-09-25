@@ -1,14 +1,29 @@
 [
   {
-    "file": "experiments/pastelweek2.js",
-    "name": "Gradient art — VOL 1, Week 2-3",
-    "description": "Art inspired by the Gradient Background created by Patt Vira. Experimented with autonomous agents like position and velocity. The circles move independently and interact with the canvas boundaries and after each click, new circles will spawn and move outward softly. "
+    "file": "experiments/albumone.js",
+    "name": "Recreation of the Joy Division Album — VOL 1, Week 1",
+    "description": "After seeing all the abstract art I immediately thought of the album cover Unknown Pleasures made by Peter Saville. It inspired this piece where I took the use of for-loop to generate wavy lines with Perlin noise which updates everytime you reload the website. The loops generate smooth, repeating curves on a black background with white strokes. "
+  },
+  {
+    "file": "experiments/albumtwo.js",
+    "name": "Recreation of the Joy Division Album — VOL 2, Week 1",
+    "description": "In VOL 2 I made another variation of the album. I added different colours, the strokes simulate ocean waves with a sandy beach background. To make it more realistic the waves are moving by using a framecount. "
+  },
+  {
+    "file": "experiments/cdalbum.js",
+    "name": "Recreation of the Radial Perlin Noise with Tree Rings into a CD — VOL 1, Week 1",
+    "description": "I felt inspired working with this piece after seeing it on Gorillasun. I used frameCount and Perlin noise to get an animation that looks like a CD disc. I added black and white strokes to emphasize the CD’s reflective rings. "
   },
 
   {
-    "file": "experiments/pastel.js",
-    "name": "GRADIENT WAVE — Week 4",
-    "description": "To improve the circle-clicks from last week, I have incorporated a wave-effect to the circles. Everytime the user clicks the wave-effect appears. The circles flow better with the sounds. I added tone to my clicked function, a soft synth sound will appear everytime the user clicks. I lowered the volume dB to make it more soft, each sound is random just like the circle colour. Feel free to create a song! "
+    "file": "experiments/rainbow.js",
+    "name": "Recreation of the Radial Perlin Noise with Tree Rings into a CD — VOL 2, Week 1",
+    "description": "Continuing from the CD disc I used Math.random() to give the rings random HSB colors. I changed the resolution to make the shapes more abstract and tunnel-like. "
+  },
+  {
+    "file": "experiments/pastelweek2.js",
+    "name": "Gradient art — VOL 1, Week 2-3",
+    "description": "Art inspired by the Gradient Background created by Patt Vira. Experimented with autonomous agents like position and velocity. The circles move independently and interact with the canvas boundaries and after each click, new circles will spawn and move outward softly. "
   },
   {
     "file": "experiments/heatmap.js",
@@ -16,24 +31,8 @@
     "description": "Art inspired by the Gradient Background created by Patt Vira. Experimented with the hovering effect, the text follows when hovering the mouse decently fast in a randomized pattern. There is also a fadeout of the text so it looks more smooth. "
   },
   {
-    "file": "experiments/cdalbum.js",
-    "name": "Recreation of the Radial Perlin Noise with Tree Rings into a CD — VOL 1",
-    "description": "I felt inspired working with this piece after seeing it on Gorillasun. I used frameCount and Perlin noise to get an animation that looks like a CD disc. I added black and white strokes to emphasize the CD’s reflective rings. "
-  },
-  {
-    "file": "experiments/rainbow.js",
-    "name": "Recreation of the Radial Perlin Noise with Tree Rings into a CD — VOL 2",
-    "description": "Continuing from the CD disc I used Math.random() to give the rings random HSB colors. I changed the resolution to make the shapes more abstract and tunnel-like. "
-  },
-  {
-    "file": "experiments/albumone.js",
-    "name": "Recreation of the Joy Division Album — VOL 1, Week 1",
-    "description": "After seeing all the abstract art I immediately thought of the album cover Unknown Pleasures made by Peter Saville. It inspired this piece where I took the use of for-loop to generate wavy lines with Perlin noise which updates everytime you reload the website. The loops generate smooth, repeating curves on a black background with white strokes. "
-  },
-
-  {
-    "file": "experiments/albumtwo.js",
-    "name": "Recreation of the Joy Division Album — VOL 2, Week 1",
-    "description": "In VOL 2 I made another variation of the album. I added different colours, the strokes simulate ocean waves with a sandy beach background. To make it more realistic the waves are moving by using a framecount. "
+    "file": "experiments/pastel.js",
+    "name": "GRADIENT WAVE — Week 4",
+    "description": "To improve the circle-clicks from last week, I have incorporated a wave-effect to the circles. Everytime the user clicks the wave-effect appears. The circles flow better with the sounds. I added tone to my clicked function, a soft synth sound will appear everytime the user clicks. I lowered the volume dB to make it more soft, each sound is random just like the circle colour. Feel free to create a song! "
   }
 ]
