@@ -147,9 +147,9 @@ class Circle {
   }
 
   getPastelColor() {
-    let r = random(150, 255);
-    let g = random(150, 255);
-    let b = random(150, 255);
+    let r = random(40, 255);
+    let g = random(70, 255);
+    let b = random(75, 255);
     return color(r, g, b);
   }
 }
